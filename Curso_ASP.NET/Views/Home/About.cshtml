@@ -1,0 +1,32 @@
+﻿@model List<Curso_ASP.NET.Models.Pelicula>
+
+@{
+    ViewBag.Title = "Octavio in Motion Company";
+    string nombre = "Octavio";
+}
+<main class="container">
+    <h2 id="title">@ViewBag.Title.</h2>
+    <h3>@ViewBag.Message</h3>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Titulo</th>
+                <th>Duración</th>
+                <th>País</th>
+                <th>Lanzamiento</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var pelicula in Model)
+            {
+                <tr>
+                    <td>@pelicula.Titulo</td>
+                    <td>@pelicula.Duracion</td>
+                    <td>@pelicula.Pais</td>
+                    <td>@pelicula.Publicacion.ToString("dd/MM/yy")</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</main>
